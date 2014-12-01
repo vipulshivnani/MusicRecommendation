@@ -86,5 +86,5 @@ app.get('/', function(req, res) {
 });
 
 //Start webserver
-app.listen(3030);
-console.log("listening on 3030..");
+app.listen(80);
+console.log("listening on 80..");
