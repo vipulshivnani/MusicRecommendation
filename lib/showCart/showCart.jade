@@ -1,0 +1,35 @@
+extend ../views/layout
+
+block content
+   div(style='float:right')
+    form(align='right', action='/logout', method='post')
+     p: input(type='submit', value='Logout')
+   h4(style='color: blue; font-family: Arial') This is your Cart Summary
+    table
+     thead
+      tr
+       th Product Name
+       th Description
+       th Price
+       th Quantity
+       th Cart Info
+     tbody
+      - each val, key in json1
+       tr
+        - each user, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')   
+          if (attrib != 'product_id')
+           td #{user}
+          else
+           td
+            a(href='http://127.0.0.1:3030/removeFromCart/' + user) Remove from Cart
+    p
+     a(href='http://127.0.0.1:3030/checkout') Proceed to Checkout
+    p
+     a(href='http://127.0.0.1:3030/catalogs') Browse all catalogs
+    p
+     a(href='http://127.0.0.1:3030/products') Browse all products 
+         
+   h4(style='color: blue; font-family: Arial') choose the recommendation type
+   a(href='http://127.0.0.1:3030/loglikely') loglikely
+   a(href='http://127.0.0.1:3030/euc') euclidean

@@ -1,0 +1,22 @@
+extend ../views/layout
+
+block content
+	div(style='float:right')
+		form(align='right', action='/logout', method='post')
+			p: input(type='submit', value='Logout')
+	h3 Add Catalog Page
+	p
+	p Catalog #{pageData.CatalogName} has been added to Amazon Market Place inventory.
+	p
+	p
+	a(href='http://127.0.0.1:3030/addProduct') Click here to add a product to existing Catalogs
+	p
+	a(href='http://127.0.0.1:3030/addCatalog') Click here to add a new Catalog
+	p
+	a(href='http://127.0.0.1:3030/removeCatalog') Remove a Catalog from inventory
+	p
+	a(href='http://127.0.0.1:3030/removeProduct') Remove a Product from inventory
+	p
+	a(href='http://127.0.0.1:3030/catalogs') View all existing Catalogs
+	p
+	a(href='http://127.0.0.1:3030/products') View all existing Products	

@@ -1,0 +1,40 @@
+extend ../views/layout
+html
+	body
+		block content
+		    script().
+		    var something = function() {
+		    console.log('something')
+		    }
+			div(style='float:right')
+				form(align='right', action='/logout', method='post')
+					p: input(type='submit', value='Logout')
+			h3 Welcome Admin. 
+			p Fill in the form to create a new catalog to Amazon Market Place inventory.
+			form(action='/addCatalog', method='post')
+				p: input(type='text', placeholder='Catalog Name', name='Catalog Name', id='Catalog Name')
+				p: input(type='submit', value='Submit')
+			p
+			a(href='http://127.0.0.1:3030/addProduct') Click here to add a product to existing Catalogs
+			p
+			a(href='http://127.0.0.1:3030/addCatalog') Click here to add a new Catalog
+			p
+			a(href='http://127.0.0.1:3030/removeCatalog') Remove a Catalog from inventory
+			p
+			a(href='http://127.0.0.1:3030/removeProduct') Remove a Product from inventory
+			
+			p
+			choose the recomendation type from options below
+			form(align='right', action='.')
+			input(type='radio', name="recommendation_filter", value="LogLikelihood",onclick='updateRecommend()', checked)
+			| LogLikelihood
+			input(type="radio", name="recommendation_filter" ,onclick="updateRecommend()",value="Euclidean" )
+			| Euclidean
+			input(type="radio", name="recommendation_filter" ,onclick="updateRecommend()", value="Cosine" )
+			| Cosine
+			input(type="radio", name="recommendation_filter" ,onclick="updateRecommend()", value="Pearson" ) 
+			| Pearson
+			input(type="radio", name="recommendation_filter" ,onclick="updateRecommend()", value="co-occurence" )
+			| co-occurence
+			button(class="btn" , onclick='something()')
+			

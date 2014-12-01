@@ -1,0 +1,27 @@
+extend ../views/layout
+
+block content
+   div(style='float:right')
+    form(align='right', action='/logout', method='post')
+     p: input(type='submit', value='Logout')
+   h4(style='color: blue; font-family: Arial') Recommendations page
+   p Below is your recommendation         
+   h4(style='color: blue; font-family: Arial') These are your recommendations
+    table
+     thead
+      tr
+       th Product Name
+       th Description
+       th Price
+       th Quantity
+       th Cart Info
+     tbody
+      - each val, key in json
+       tr
+        - each user, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')   
+          if (attrib != 'product_id')
+           td #{user}
+          else
+           td
+            a(href='http://127.0.0.1:3030/addToCart/' + user) Add To Cart

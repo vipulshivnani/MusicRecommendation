@@ -1,0 +1,13 @@
+extend ../views/layoutExtern
+
+block content
+	form(action='/signup', method='post')
+		p: input(type='text', placeholder='First Name', name='First Name', id='First Name')
+		p: input(type='text', placeholder='Last Name', name='Last Name', id='Last Name')
+		p: input(type='text', placeholder='Email', name='Email', id='Email')
+		p: input(type='password', placeholder='Password', name='Password', id='Password')
+		p: input(type='password', placeholder='Password confirmation', name='Password confirmation', id='Password confirmation')
+		p: input(type='submit', value='Signup')
+	p
+		| Already a user? Great!
+		| <a href="http://127.0.0.1:3030/login">Login here</a>

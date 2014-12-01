@@ -1,0 +1,29 @@
+extend ../views/layout
+
+block content
+   div(style='float:right')
+    form(align='right', action='/logout', method='post')
+     p: input(type='submit', value='Logout')
+   h4(style='color: blue; font-family: Arial') Thank you for using Amazon Market Place
+   p Your purchase of the following items has been successful. We have lot to offer more!!!
+   p Following is a list of items purchased till now
+   p 
+    table
+     thead
+      tr
+       th Product Name
+       th Description
+       th Price
+     tbody
+      - each val, key in json
+       tr
+        - each user, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')   
+          if (attrib != 'product_id')
+           td #{user}
+    p
+     a(href='http://127.0.0.1:3030/catalogs') Browse all catalogs
+    p
+     a(href='http://127.0.0.1:3030/products') Browse all products
+    p
+     a(href='http://127.0.0.1:3030/showCart') Show Cart Summary      

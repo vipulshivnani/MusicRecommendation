@@ -1,0 +1,11 @@
+extend ../views/layout
+
+block content
+   div(style='float:right')
+    form(align='right', action='/logout', method='post')
+     p: input(type='submit', value='Logout')
+   h3 There are no products added to your Shopping Cart right now
+   p
+    a(href='http://127.0.0.1:3030/catalogs') Browse all catalogs
+   p
+    a(href='http://127.0.0.1:3030/products') Browse all products

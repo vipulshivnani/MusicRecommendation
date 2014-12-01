@@ -1,0 +1,9 @@
+extend ../views/layoutExtern
+
+block content
+	form(action='/login', method='post')
+		p: input(type='text', placeholder='Username', name='Username', id='Username')
+		p: input(type='password', placeholder='Password', name='Password', id='Password')
+		p: input(type='submit', value='Login')
+	form(action='/signup', method='get')
+		p: input(type='submit', value='Signup')

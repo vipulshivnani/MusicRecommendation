@@ -1,0 +1,9 @@
+extend ../views/layoutExtern
+
+block content
+ div(style='float:right')
+  form(align='right', action='/logout', method='post')
+   p: input(type='submit', value='Logout')
+ h3 You are not authorized as Administrative User.
+ p
+ a(href='http://127.0.0.1:3030/home') Go back to home

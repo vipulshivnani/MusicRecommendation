@@ -1,0 +1,9 @@
+extend ../views/layout
+
+block content
+	h3 Welcome #{pageData.Email}. You are now signed up for the Amazon Market Place.
+	p Your credentials are created and saved. Use your Email & password for next login.
+	p Choose one of the following options to browse
+	a(href='http://127.0.0.1:3030/catalogs') Catalogs
+	p
+	a(href='http://127.0.0.1:3030/products') Products

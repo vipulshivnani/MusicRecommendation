@@ -1,0 +1,10 @@
+extend ../views/layout
+
+block content
+	div(style='float:right')
+		form(align='right', action='/logout', method='post')
+			p: input(type='submit', value='Logout')
+	h4 Please enter payment information to buy items in Cart.
+	form(action='/checkout', method='post')
+		p: input(type='text', placeholder='Credit Card Number', name='CCNumber', id='CCNumber')
+		p: input(type='submit', value='Proceed with payment')

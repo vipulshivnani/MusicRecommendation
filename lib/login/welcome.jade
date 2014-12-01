@@ -1,0 +1,16 @@
+extend ../views/layout
+
+block content
+	div(style='float:right')
+		form(align='right', action='/logout', method='post')
+			p: input(type='submit', value='Logout')
+	h3 Welcome #{pageData.Username}. You are signed in to Amazon Market Place.
+	p Your last login was on #{pageData.LastLogin}
+	p Choose one of the following options to browse
+	a(href='http://127.0.0.1:3030/catalogs') Catalogs
+	p
+	a(href='http://127.0.0.1:3030/products') Products
+	p
+	a(href='http://127.0.0.1:3030/userPurchases') Check Products Purchased
+	p
+	a(href='http://127.0.0.1:3030/addCatalog') Click here to perform admin functionalities

@@ -1,0 +1,30 @@
+extend ../views/layout
+
+block content
+   div(style='float:right')
+    form(align='right', action='/logout', method='post')
+     p: input(type='submit', value='Logout')
+   h4(style='color: blue; font-family: Arial') List of Products and Catalogs
+    table
+     thead
+      tr
+       th Catalog Name
+       th Product Name
+       th Description
+       th Price
+       th Quantity
+       th Buy this product
+     tbody
+      - each val, key in json
+       tr
+        - each user, attrib in val
+         if (attrib != 'parse' && attrib != '_typeCast')   
+          if (attrib != 'product_id')
+           td #{user}
+          else
+           td
+            a(href='http://127.0.0.1:3030/addToCart/' + user) Add to cart
+    p
+     a(href='http://127.0.0.1:3030/catalogs') Browse all catalogs
+    p
+     a(href='http://127.0.0.1:3030/showCart') Show Cart Summary             

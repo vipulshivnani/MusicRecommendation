@@ -1,0 +1,21 @@
+script(type='text/javascript').
+var express = require("express");
+var app = express();
+var database = require("../database")
+var sql = '';
+var selectedVal='';
+document.getElementsByName("recommendation_filter").onclick(function updateRecommend() {
+console.log("hi");
+if (req.session.user != null) {
+var x = document.getElementsByName("recommendation_filter");
+var i;
+for (i = 0; i < x.length; i++) {
+if(x[i].checked == true){
+selectedVal=x[i].value;
+}
+}
+sql = 'update rcmndation_type set rcd = ' + selectedVal ;
+database.connectDB(sql, database.databasePool, function(err, rows) {
+});
+}
+});
